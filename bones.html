@@ -25,7 +25,7 @@
           var tt = maxBox-minBox;
           var arr = new Array();
           
-          if(CntBox>(++tt) || isNaN(minNum) || isNaN(maxNum) || isNaN(n) )
+          if(CntBox>(++tt))
           {
             alert("抽出幾組數字要小於範圍最大值");
           }
@@ -123,8 +123,8 @@
 		<div style="font-size: 30px;">
 
                 <div>
-                    <div style="background-color:#444444; color:#FFFFFF; border-radius:20px;padding-left:20px;">
-                        抽出幾組數字
+                    <div style="background-color:#444444; color:#FFFFFF; border-radius:20px;">
+                        <i class="fa fa-arrow-circle-down"></i> 抽出幾組數字
                     </div>
                     <!-- 空一行用 --><p></p>
                     <input style="border-radius:10px;height: 30px;" type="text" id="CntBox" placeholder="ex:5"><br>
@@ -133,8 +133,8 @@
                 <div>
                   <br>
 
-                  <div style="background-color:#444444; color:#FFFFFF; border-radius:20px;padding-left:20px;">
-                      號碼範圍
+                  <div style="background-color:#444444; color:#FFFFFF; border-radius:20px;">
+                      <i class="fa fa-arrow-circle-down"></i> 號碼範圍
                   </div>
                   <!-- 空一行用 --><p></p>
                   <input style="border-radius:10px;height: 30px;" type="text" id="minBox" placeholder="ex:1">
@@ -150,8 +150,8 @@
                 <div id="ans"></div>
                 <br>
 				<br>
-                <div style="background-color:#444444; color:#FFFFFF; border-radius:20px;padding-left:20px;">
-                   抽出結果
+                <div style="background-color:#444444; color:#FFFFFF; border-radius:20px;">
+                  <i class="fa fa-arrow-circle-down"></i> 抽出結果
                 </div>
                 <div id="Ans">
                   <font color="green" id="Ans_word"></font>
