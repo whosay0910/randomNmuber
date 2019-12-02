@@ -1,0 +1,175 @@
+
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=640">
+
+    <link rel="stylesheet" href="/randomNmuber/assets/css/style.css?v=6a38e78d7a3c9eba9b40bc31f7079e6203b49f5d" media="screen">
+    <link rel="stylesheet" href="/randomNmuber/assets/css/mobile.css" media="handheld, only screen and (max-device-width:640px)">
+    <link rel="stylesheet" href="/randomNmuber/assets/css/non-screen.css" media="handheld, only screen and (max-device-width:640px)">
+    <script src="/randomNmuber/assets/js/modernizr.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+    <script src="/randomNmuber/assets/js/headsmart.min.js"></script>
+    
+    <script>
+      $(document).ready(function () {
+        //$('#main_content').headsmart()
+
+        $('#btnGo').click(function(){
+          
+          var n = parseInt($('#CntBox').val());
+          var minNum = parseInt($('#minBox').val());
+          var maxNum = parseInt($('#maxBox').val());
+          var tt = maxBox-minBox;
+          var arr = new Array();
+          
+          if(CntBox>(++tt) || isNaN(minNum) || isNaN(maxNum) || isNaN(n) )
+          {
+            alert("抽出幾組數字要小於範圍最大值");
+          }
+          else
+          {
+            $('.showNumber').remove();
+            var rdmArray = [n];     //儲存產生的陣列
+            for(var i=0; i<n; i++) {
+                var rdm = 0;        //暫存的亂數
+
+                do {
+                    var exist = false;          //此亂數是否已存在
+                    rdm = Math.floor( Math.random() * (maxNum - minNum + 1) ) + minNum;
+                    
+                    //檢查亂數是否存在於陣列中，若存在則繼續回圈
+                    if(rdmArray.indexOf(rdm) != -1) exist = true;
+                    
+                } while (exist);    //產生沒出現過的亂數時離開迴圈
+                
+                rdmArray[i] = rdm;
+            }
+            
+            $.each( rdmArray, function( key, value ) {
+                $('#Ans').append("<div id='show"+key+"' class='showNumber' style='display:none;'>"+value+"</div>");
+            });
+            $('#mark_show').append('<button id="showGo" class="btn btn-danger btn-lg" data-id="0">抽吧，顯示號碼球</button>')
+            $('#btnGo').remove();
+            $('#Ans_word').html('已完成產生，請按下「抽吧，顯示號碼球」');
+
+            $("#showGo").on("click",function(){
+              var t1 = $(this).attr('data-id');
+              $('#show'+t1).show();
+              $('#show'+t1).show();
+              t1++;
+              $(this).attr('data-id', t1);
+              if($('.showNumber').length<=t1)
+                alert('此次號碼球已全部呈現!');
+              var h = $(document).height()-$(window).height();
+              $(document).scrollTop(h); 
+              
+            });
+          }
+        })
+
+      })
+
+    </script>
+    <style type="text/css">
+      .fa-arrow-circle-down:before {
+            content: "\f0ab";
+        }
+    </style>
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Welcome to GitHub Pages | randomNmuber</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Welcome to GitHub Pages" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="填上你要的數字區間和個數，隨機產生不重複的號碼！看看誰是幸運的中獎兒~也可抽樂透喔" />
+<meta property="og:description" content="填上你要的數字區間和個數，隨機產生不重複的號碼！看看誰是幸運的中獎兒~也可抽樂透喔" />
+<link rel="canonical" href="https://whosay0910.github.io/randomNmuber/" />
+<meta property="og:url" content="https://whosay0910.github.io/randomNmuber/" />
+<meta property="og:site_name" content="randomNmuber" />
+<script type="application/ld+json">
+{"@type":"WebSite","url":"https://whosay0910.github.io/randomNmuber/","name":"randomNmuber","description":"填上你要的數字區間和個數，隨機產生不重複的號碼！看看誰是幸運的中獎兒~也可抽樂透喔","headline":"Welcome to GitHub Pages","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+    
+    <div class="shell">
+
+      <header>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <h1>抽獎抽起來</h1>
+            <h2>填上你要的數字區間和個數，隨機產生不重複的號碼！看看誰是幸運的中獎兒~也可抽樂透喔</h2>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+      </header>
+
+      
+        <div id="no-downloads">
+          <span class="inner">
+          </span>
+        </div>
+
+      <span class="banner-fix"></span>
+
+
+      <section id="main_content">
+		<div style="font-size: 30px;">
+
+                <div>
+                    <div style="background-color:#444444; color:#FFFFFF; border-radius:20px;">
+                        <i class="fa fa-arrow-circle-down"></i> 抽出幾組數字
+                    </div>
+                    <!-- 空一行用 --><p></p>
+                    <input style="border-radius:10px;height: 30px;" type="text" id="CntBox" placeholder="ex:5"><br>
+                </div>
+
+                <div>
+                  <br>
+
+                  <div style="background-color:#444444; color:#FFFFFF; border-radius:20px;">
+                      <i class="fa fa-arrow-circle-down"></i> 號碼範圍
+                  </div>
+                  <!-- 空一行用 --><p></p>
+                  <input style="border-radius:10px;height: 30px;" type="text" id="minBox" placeholder="ex:1">
+                  <br>
+                  到
+                  <br>
+                  <input style="border-radius:10px;height: 30px;" type="text" id="maxBox" placeholder="ex:9999">
+                  <br>
+                  <div id="mark_show"></div>
+                  <button id="btnGo" class="btn btn-danger btn-lg">產生號碼球</button>
+                </div>
+
+                <div id="ans"></div>
+                <br>
+				<br>
+                <div style="background-color:#444444; color:#FFFFFF; border-radius:20px;">
+                  <i class="fa fa-arrow-circle-down"></i> 抽出結果
+                </div>
+                <div id="Ans">
+                  <font color="green" id="Ans_word"></font>
+                </div>
+
+                <br>
+
+            </div>
+      </section>
+
+      <footer>
+        <span class="ribbon-outer">
+          
+        </span>
+      </footer>
+
+    </div>
+
+    
+  </body>
+</html>
