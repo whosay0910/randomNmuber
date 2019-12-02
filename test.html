@@ -12,28 +12,66 @@
     <script src="/randomNmuber/assets/js/modernizr.js"></script>
     <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
     <script src="/randomNmuber/assets/js/headsmart.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    
     <script>
       $(document).ready(function () {
         //$('#main_content').headsmart()
 
         $('#btnGo').click(function(){
           
-          var CntBox = $('#CntBox').val();
-          var minBox = $('#minBox').val();
-          var maxBox = $('#maxBox').val();
+          var n = parseInt($('#CntBox').val());
+          var minNum = parseInt($('#minBox').val());
+          var maxNum = parseInt($('#maxBox').val());
           var tt = maxBox-minBox;
-          if(CntBox>=(++tt))
+          var arr = new Array();
+          
+          if(CntBox>(++tt) || isNaN(minNum) || isNaN(maxNum) || isNaN(n) )
           {
-            alert("抽出幾組數字要小於範圍最大值"+tt);
+            alert("抽出幾組數字要小於範圍最大值");
           }
           else
           {
+            $('.showNumber').remove();
+            var rdmArray = [n];     //儲存產生的陣列
+            for(var i=0; i<n; i++) {
+                var rdm = 0;        //暫存的亂數
 
+                do {
+                    var exist = false;          //此亂數是否已存在
+                    rdm = Math.floor( Math.random() * (maxNum - minNum + 1) ) + minNum;
+                    
+                    //檢查亂數是否存在於陣列中，若存在則繼續回圈
+                    if(rdmArray.indexOf(rdm) != -1) exist = true;
+                    
+                } while (exist);    //產生沒出現過的亂數時離開迴圈
+                
+                rdmArray[i] = rdm;
+            }
+            
+            $.each( rdmArray, function( key, value ) {
+                $('#Ans').append("<div id='show"+key+"' class='showNumber' style='display:none;'>"+value+"</div>");
+            });
+            $('#mark_show').append('<button id="showGo" class="btn btn-danger btn-lg" data-id="0">抽吧，顯示號碼球</button>')
+            $('#btnGo').remove();
+            $('#Ans_word').html('已完成產生，請按下「抽吧，顯示號碼球」');
+
+            $("#showGo").on("click",function(){
+              var t1 = $(this).attr('data-id');
+              $('#show'+t1).show();
+              $('#show'+t1).show();
+              t1++;
+              $(this).attr('data-id', t1);
+              if($('.showNumber').length<=t1)
+                alert('此次號碼球已全部呈現!');
+              var h = $(document).height()-$(window).height();
+              $(document).scrollTop(h); 
+              
+            });
           }
-          
         })
+
       })
+
     </script>
     <style type="text/css">
       .fa-arrow-circle-down:before {
@@ -105,8 +143,8 @@
                   <br>
                   <input style="border-radius:10px;height: 30px;" type="text" id="maxBox" placeholder="ex:9999">
                   <br>
-                  <br>
-                  <button id="btnGo" class="btn btn-danger btn-lg">抽吧～</button>
+                  <div id="mark_show"></div>
+                  <button id="btnGo" class="btn btn-danger btn-lg">產生號碼球</button>
                 </div>
 
                 <div id="ans"></div>
@@ -115,7 +153,9 @@
                 <div style="background-color:#444444; color:#FFFFFF; border-radius:20px;">
                   <i class="fa fa-arrow-circle-down"></i> 抽出結果
                 </div>
-                <div id="Ans"><font color="green">將在這顯示您抽中的號碼</font></div>
+                <div id="Ans">
+                  <font color="green" id="Ans_word"></font>
+                </div>
 
                 <br>
 
