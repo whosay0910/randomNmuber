@@ -51,9 +51,9 @@
             $.each( rdmArray, function( key, value ) {
                 $('#Ans').append("<span id='show"+key+"' class='showNumber' style='display:none;'>"+value+"，</span>");
             });
-            $('#mark_show').append('<button id="showGo" class="btn btn-danger btn-lg" data-id="0">抽吧，顯示號碼球</button>')
+            $('#mark_show').append('<button id="showGo" class="btn btn-danger btn-lg" data-id="0">抽吧，顯示號碼球</button><>')
             $('#btnGo').remove();
-            $('#Ans_word').html('已完成產生，<br/>請按下「抽吧，顯示號碼球」。');
+            $('#Ans_word').html('已完成產生，<br/>請按下「抽吧，顯示號碼球」。<br/>');
             var h = $(document).height()-$(window).height();
             $(document).scrollTop(h); 
 
