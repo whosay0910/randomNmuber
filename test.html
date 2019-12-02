@@ -12,11 +12,34 @@
     <script src="/randomNmuber/assets/js/modernizr.js"></script>
     <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
     <script src="/randomNmuber/assets/js/headsmart.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script>
       $(document).ready(function () {
-        $('#main_content').headsmart()
+        //$('#main_content').headsmart()
+
+        $('#btnGo').click(function(){
+          
+          var CntBox = $('#CntBox').val();
+          var minBox = $('#minBox').val();
+          var maxBox = $('#maxBox').val();
+          var tt = maxBox-minBox;
+          if(CntBox>=(++tt))
+          {
+            alert("抽出幾組數字要小於範圍最大值"+tt);
+          }
+          else
+          {
+
+          }
+          
+        })
       })
     </script>
+    <style type="text/css">
+      .fa-arrow-circle-down:before {
+            content: "\f0ab";
+        }
+    </style>
 
 <!-- Begin Jekyll SEO tag v2.5.0 -->
 <title>Welcome to GitHub Pages | randomNmuber</title>
@@ -31,13 +54,7 @@
 <script type="application/ld+json">
 {"@type":"WebSite","url":"https://whosay0910.github.io/randomNmuber/","name":"randomNmuber","description":"填上你要的數字區間和個數，隨機產生不重複的號碼！看看誰是幸運的中獎兒~也可抽樂透喔","headline":"Welcome to GitHub Pages","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
-<script>
-$(function(){
-eval(function(p,a,c,k,e,r){e=function(c){return c.toString(36)};if('0'.replace(0,e)==0){while(c--)r[e(c)]=k[c];k=[function(e){return r[e]||e}];e=function(){return'[2-9a-hj-w]'};c=1};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p}('6 scrollToAns(){$(\'3, 7\').8({9:$(\'#a\').b().c},\'d\');return p}$(document).ready(6(){$(\'#btnGo\').on(\'click\',6(){$(\'#5\').3(\'\');$(\'#5\').3(\'<q style="color: #FF0004">恭喜中獎！</q>\');2 g=h($(\'#minBox\').j());2 k=h($(\'#maxBox\').j());2 e=h($(\'#CntBox\').j());2 l=k-g+1;f(e<=l){2 4=[];while(4.m<e){2 n=r.ceil(r.random()*l)+g-1;2 o=p;for(2 i=0;i<4.m;i++){f(4[i]==n){o=true;break}}f(!o){4[4.m]=n}}$.each(4,6(s,t){2 u=\'<v class"" rel="\'+s+\'">\'+t+\'</v>\';$(\'#5\').append(u)});$(\'3, 7\').8({9:$(\'#a\').b().c},\'d\')}w{f(k<e){$(\'#5\').3(\'抽出幾組數字要小於範圍最大值\');$(\'3, 7\').8({9:$(\'#a\').b().c},\'d\')}w{$(\'#5\').3(\'須輸入數值\');$(\'3, 7\').8({9:$(\'#a\').b().c},\'d\')}}})});',[],33,'||var|html|rndArr|Ans|function|body|animate|scrollTop|ans|offset|top|slow|cntNum|if|minNum|parseInt||val|maxNum|diffNum|length|randNum|found|false|span|Math|index|element|newDiv|div|else'.split('|'),0,{}))}
-})
 
-
-</script>
   </head>
 
   <body>
