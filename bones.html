@@ -50,6 +50,7 @@
             });
             $('#mark_show').append('<button id="showGo" class="btn btn-danger btn-lg" data-id="0">抽吧，顯示號碼球</button>')
             $('#btnGo').remove();
+            $('.range1').hide();
             $('#Ans_word').html('已完成產生，<br/>請按下「抽吧，顯示號碼球」。<br/>');
             var h = $(document).height()-$(window).height();
             $(document).scrollTop(h); 
@@ -72,6 +73,9 @@
       .fa-arrow-circle-down:before {
             content: "\f0ab";
         }
+      .showNumber{
+        font-size: 60px;
+      }
     </style>
 
 <!-- Begin Jekyll SEO tag v2.5.0 -->
@@ -104,67 +108,50 @@
           <span class="right-tail"></span>
         </span>
       </header>
-
-      
         <div id="no-downloads">
           <span class="inner">
           </span>
         </div>
-
       <span class="banner-fix"></span>
-
-
       <section id="main_content">
-		<div style="font-size: 30px;">
+        <div style="font-size: 30px;">
 
-                <div>
-                    <div style="background-color:#444444; color:#FFFFFF; border-radius:20px;padding-left: 20px;">
-                        抽出幾組數字
-                    </div>
-                    <!-- 空一行用 --><p></p>
-                    <input style="border-radius:10px;height: 30px;" type="text" id="CntBox" placeholder="ex:5"><br>
-                </div>
-
-                <div>
-                  <br>
-
-                  <div style="background-color:#444444; color:#FFFFFF; border-radius:20px;padding-left: 20px;">
-                      號碼範圍
-                  </div>
-                  <!-- 空一行用 --><p></p>
-                  <input style="border-radius:10px;height: 30px;" type="text" id="minBox" placeholder="ex:1">
-                  <br>
-                  到
-                  <br>
-                  <input style="border-radius:10px;height: 30px;" type="text" id="maxBox" placeholder="ex:9999">
-                  <br>
-                  
-                  <button id="btnGo" class="btn btn-danger btn-lg">產生號碼球</button>
-                </div>
-
-                <div id="ans"></div>
-                <br>
-				<br>
+            <div class="range1">
                 <div style="background-color:#444444; color:#FFFFFF; border-radius:20px;padding-left: 20px;">
-                  抽出結果<span id="mark_show" style="padding-left: 50px;"></span>
+                    抽出幾組數字
                 </div>
-                <div id="Ans">
-                  <font color="green" id="Ans_word"></font>
-                </div>
-
-                <br>
-
+                <!-- 空一行用 --><p></p>
+                <input style="border-radius:10px;height: 30px;" type="text" id="CntBox" placeholder="ex:5"><br>
             </div>
+            <div class="range1">
+              <br>
+
+              <div style="background-color:#444444; color:#FFFFFF; border-radius:20px;padding-left: 20px;">
+                  號碼範圍
+              </div>
+              <!-- 空一行用 --><p></p>
+              <input style="border-radius:10px;height: 30px;" type="text" id="minBox" placeholder="ex:1">
+              <br>
+              到
+              <br>
+              <input style="border-radius:10px;height: 30px;" type="text" id="maxBox" placeholder="ex:9999">
+              <br>
+              <button id="btnGo" class="btn btn-danger btn-lg">產生號碼球</button>
+            </div>
+            <div id="ans"></div>
+            <br><br>
+            <div style="background-color:#444444; color:#FFFFFF; border-radius:20px;padding-left: 20px;">
+              抽出結果<span id="mark_show" style="padding-left: 50px;"></span>
+            </div>
+            <div id="Ans">
+              <font color="green" id="Ans_word"></font>
+            </div>
+            <br>
+        </div>
       </section>
-
       <footer>
-        <span class="ribbon-outer">
-          
-        </span>
+        <span class="ribbon-outer"></span>
       </footer>
-
     </div>
-
-    
   </body>
 </html>
