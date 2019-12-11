@@ -55,20 +55,26 @@
             $('#Ans_word').html('已完成產生，<br/>請按下「抽吧，顯示號碼球」。<br/>');
             var h = $(document).height()-$(window).height();
             $(document).scrollTop(h); 
+
             $("#showGo").on("click",function(){
               var t1 = $(this).attr('data-id');
               $('#show'+t1).show();
               t1++;
               $(this).attr('data-id', t1);
-              if($('.showNumber').length<=t1)
-                alert('此次號碼球已全部呈現!');
+
               var h = $(document).height()-$(window).height();
               $(document).scrollTop(h); 
+              checkball(t1)
               
             });
+
           }
         })
       })
+      function checkball(t1){
+        if($('.showNumber').length<=t1)
+          alert('此次號碼球已全部呈現!');
+      }
     </script>
     <style type="text/css">
       .fa-arrow-circle-down:before {
