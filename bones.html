@@ -20,10 +20,10 @@
           var n = parseInt($('#CntBox').val());
           var minNum = parseInt($('#minBox').val());
           var maxNum = parseInt($('#maxBox').val());
-          var tt = parseInt(maxNum-minNum)++;
+          var tt = parseInt(maxNum-minNum);
           var arr = new Array();
           console.log(n+'@@'+tt);
-          if(n>tt)
+          if(n>(++tt))
           {
             alert("抽出幾組數字要小於範圍最大值");
           }
