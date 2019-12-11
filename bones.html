@@ -44,9 +44,14 @@
                 
                 rdmArray[i] = rdm;
             }
-            console.log(rdmArray.length);
+            var a1 = rdmArray.length;
+            a1--;
             $.each( rdmArray, function( key, value ) {
+              if(key == a1)
+                $('#Ans').append("<span id='show"+key+"' class='showNumber' style='display:none;'>"+value+"。</span>");
+              else
                 $('#Ans').append("<span id='show"+key+"' class='showNumber' style='display:none;'>"+value+"，</span>");
+
             });
             $('#mark_show').append('<button id="showGo" class="btn btn-danger btn-lg" data-id="0">抽吧，顯示號碼球</button>')
             $('#btnGo').remove();
