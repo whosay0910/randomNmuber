@@ -76,6 +76,14 @@
       .showNumber{
         font-size: 60px;
       }
+      span.banner-fix {
+        background: transparent url(../images/download-fallback-bg.png) center top no-repeat;
+        display: block;
+        height: 19px;
+        position: absolute;
+        /* width: 670px; */
+        top: 19px;
+      }
     </style>
 
 <!-- Begin Jekyll SEO tag v2.5.0 -->
@@ -139,19 +147,14 @@
               <button id="btnGo" class="btn btn-danger btn-lg">產生號碼球</button>
             </div>
             <div id="ans"></div>
-            <br><br>
-            <div style="background-color:#444444; color:#FFFFFF; border-radius:20px;padding-left: 20px;">
-              抽出結果<span id="mark_show" style="padding-left: 50px;"></span>
-            </div>
-            <div id="Ans">
-              <font color="green" id="Ans_word"></font>
-            </div>
-            <br>
         </div>
       </section>
-      <footer>
-        <span class="ribbon-outer"></span>
-      </footer>
+      <div style="background-color:#444444; color:#FFFFFF; border-radius:20px;padding-left: 20px;">
+        抽出結果<span id="mark_show" style="padding-left: 50px;"></span>
+      </div>
+      <div id="Ans">
+        <font color="green" id="Ans_word"></font>
+      </div>
     </div>
   </body>
 </html>
