@@ -62,8 +62,10 @@
             $(document).scrollTop(h); 
 
             $("#showGo").on("click",function(){
+			  $('.showNumber').css('color','black');
               var t1 = $(this).attr('data-id');
               $('#show'+t1).show();
+			  $('#show'+t1).css('color','deeppink');
               t1++;
               $(this).attr('data-id', t1);
 
