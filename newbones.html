@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=640">
+
+    <link rel="stylesheet" href="/randomNmuber/assets/css/style.css?v=6a38e78d7a3c9eba9b40bc31f7079e6203b49f5d" media="screen">
+    <link rel="stylesheet" href="/randomNmuber/assets/css/mobile.css" media="handheld, only screen and (max-device-width:640px)">
+    <link rel="stylesheet" href="/randomNmuber/assets/css/non-screen.css" media="handheld, only screen and (max-device-width:640px)">
+    <script src="/randomNmuber/assets/js/modernizr.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+    <script src="/randomNmuber/assets/js/headsmart.min.js"></script>
+    
+    <script>
+      $(document).ready(function () {
+        $('#hello').click(function(){
+          $(this).hide();
+          open("page.html", "child", "toolbar=yes,scrollbars=yes,resizable=yes,top=70,left=400,width=450,height=200");
+        })
+      })
+    </script>
+    <style type="text/css">
+      .fa-arrow-circle-down:before {
+            content: "\f0ab";
+        }
+      .showNumber{
+        font-size: 70px;
+      }
+      span.banner-fix {
+        background: transparent url(../images/download-fallback-bg.png) center top no-repeat;
+        display: block;
+        height: 19px;
+        position: absolute;
+        /* width: 670px; */
+        top: 19px;
+      }
+	  #ans{
+		margin: 0 15em 0 15em;
+		font-family: sans-serif;
+	  }
+    .showNumber{
+      color: black;
+    }
+      .showNumber:last-child{
+        color:deeppink;
+      }
+    </style>
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Welcome to GitHub Pages | randomNmuber</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Welcome to GitHub Pages" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="" />
+<meta property="og:description" content="" />
+<link rel="canonical" href="https://whosay0910.github.io/randomNmuber/" />
+<meta property="og:url" content="https://whosay0910.github.io/randomNmuber/" />
+<meta property="og:site_name" content="randomNmuber" />
+<script type="application/ld+json">
+{"@type":"WebSite","url":"https://whosay0910.github.io/randomNmuber/","name":"randomNmuber","description":"填上你要的數字區間和個數，隨機產生不重複的號碼！看看誰是幸運的中獎兒~也可抽樂透喔","headline":"Welcome to GitHub Pages","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+  <body>
+    <div class="shell">
+      <header>
+        <button id="hello">點我輸入號碼後隱藏按鈕</button>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <h1>樂透大賓果</h1>
+            <h2></h2>
+          </span>
+        </span>
+      </header>
+        <div id="no-downloads">
+          <span class="inner">
+          </span>
+        </div>
+      <span class="banner-fix"></span>
+    </div>
+    <div id="ans">
+      <font color="green" id="Ans_word"></font>
+    </div>
+  </body>
+</html>
