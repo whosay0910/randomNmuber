@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=640">
+
+    <link rel="stylesheet" href="/randomNmuber/assets/css/style.css?v=6a38e78d7a3c9eba9b40bc31f7079e6203b49f5d" media="screen">
+    <link rel="stylesheet" href="/randomNmuber/assets/css/mobile.css" media="handheld, only screen and (max-device-width:640px)">
+    <link rel="stylesheet" href="/randomNmuber/assets/css/non-screen.css" media="handheld, only screen and (max-device-width:640px)">
+    <script src="/randomNmuber/assets/js/modernizr.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+    <script src="/randomNmuber/assets/js/headsmart.min.js"></script>
+    
+    </head>
+    <script>
+      $(document).ready(function () {
+    		$('#a1').click(function(){
+    			var number = $('#number').val();
+    			if(number!=""){
+    				$('#number').val("");
+	    			var str = "<span id='' class='showNumber'>"+number+"、</span>";
+	    			if ($('#check_id').is(":checked"))
+					{
+					  var str = "<span id='' class='showNumber'>"+number+"。</span>";
+					  $('#aa').append(number+'。');
+					}
+					else{
+						$('#aa').append(number+'、');
+					}
+	    			$('#ans', opener.document).append(str);
+    			}
+    			else{
+    				alert('請輸入數字');
+    			}
+    		})
+    	})
+    </script>
+    <body>
+    	<div>目前已經存在的號碼：</div>
+    	<div id="aa"></div>
+	<br/>
+    	<label><input type="checkbox" id="check_id" value="true"> 是不是最後一個數字</label><br/><br/><br/>
+    	<input type="number" id="number">
+
+    	<button id="a1">submit</button>
+    </body>
+</html>
